@@ -1,3 +1,4 @@
+import helpers.UploadFile;
 import net.lightbody.bmp.core.har.Har;
 import net.lightbody.bmp.proxy.ProxyServer;
 
@@ -27,6 +28,7 @@ public class GettingHarTest{
 
         Har har = server.getHar();
         har.writeTo(new File("D://issoft.har"));
+        UploadFile.postToHarStorage(har);
 
         driver.quit();
         server.stop();
